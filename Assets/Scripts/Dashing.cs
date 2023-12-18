@@ -8,7 +8,7 @@ public class Dashing : MonoBehaviour
     public Transform orientation;
     public Transform playerCam;
     private Rigidbody rb;
-    private PlayerMovementDashing pm;
+    //private PlayerMovementDashing pm;
 
     [Header("Dashing")]
     public float dashForce;
@@ -17,7 +17,7 @@ public class Dashing : MonoBehaviour
     public float dashDuration;
 
     [Header("CameraEffects")]
-    public PlayerCam cam;
+    //public PlayerCam cam;
     public float dashFov;
 
     [Header("Settings")]
@@ -36,7 +36,7 @@ public class Dashing : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        pm = GetComponent<PlayerMovementDashing>();
+        //pm = GetComponent<PlayerMovementDashing>();
     }
 
     private void Update()
@@ -53,10 +53,10 @@ public class Dashing : MonoBehaviour
         if (dashCdTimer > 0) return;
         else dashCdTimer = dashCd;
 
-        pm.dashing = true;
-        pm.maxYSpeed = maxDashYSpeed;
+        //pm.dashing = true;
+        //pm.maxYSpeed = maxDashYSpeed;
 
-        cam.DoFov(dashFov);
+        //cam.DoFov(dashFov);
 
         Transform forwardT;
 
@@ -89,10 +89,10 @@ public class Dashing : MonoBehaviour
 
     private void ResetDash()
     {
-        pm.dashing = false;
-        pm.maxYSpeed = 0;
+        //pm.dashing = false;
+        //pm.maxYSpeed = 0;
 
-        cam.DoFov(85f);
+        //cam.DoFov(85f);
 
         if (disableGravity)
             rb.useGravity = true;
